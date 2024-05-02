@@ -3,7 +3,7 @@
 	const SERVER_NAME = 'localhost';
 	const USER_NAME = 'root';
 	const PASS = '';
-	const DB_NAME = 'webbanhangdientu';
+	const DB_NAME = 'webbandodientu';
 
 	// Kết nối database
 
@@ -13,5 +13,3 @@
 		die("Unable to connect :" . mysqli_connect_error());
 		exit();
 	}
-
-	// echo "Connection successful";

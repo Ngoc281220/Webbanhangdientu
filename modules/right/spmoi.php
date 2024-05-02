@@ -3,8 +3,36 @@
 		$sql_product_new = "select * from sanpham order by idsanpham desc limit 0,6";
 		$result = mysqli_query($conn, $sql_product_new);
 	?>
-	<div class="tieude">Sản phẩm mới nhất</div>
-	<ul class="product">
+	<div class="bg-dark p-2 text-light">Sản phẩm mới nhất</div>
+	<div>
+		<div class="row mx-0 my-4">
+			<?php
+				while ($row_product_new = $result->fetch_assoc()) {
+			?>
+				<div class="col-3 my-3">
+					<div class="card">
+						<div class="card-body">
+							<a class="text-decoration-none"
+								href="?quanly=chitietsp&idloaisp=<?php echo $row_product_new['loaisp'] ?>&id=<?php echo $row_product_new['idsanpham'] ?>"
+							>
+								<img class="img-fluid"
+									src="admincp/modules/quanlysanpham/uploads/<?php echo $row_product_new['hinhanh'] ?>"  
+								/>
+								<p class="card-title py-2 text-center"><?php echo $row_product_new['tensp'] ?></p>
+								<p class="text-center"
+									style="color:red;font-weight:bold;">
+									<?php echo number_format($row_product_new['giadexuat']) . ' ' . 'VNĐ' ?>
+								</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			<?php
+				}
+			?>
+		</div>
+	</div>
+	<!-- <ul class="product">
 		<?php
 			while ($row_product_new = $result->fetch_assoc()) {
 		?>
@@ -28,8 +56,7 @@
 		<?php
 			}
 		?>
-	</ul>
-	<div class="clear"></div>
+	</ul> -->
 
 	<?php
 		$sql_product_type = mysqli_query($conn, "select * from loaisp ");

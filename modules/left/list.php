@@ -4,14 +4,14 @@
 	$result = mysqli_query($conn, $sql_product_type);
 ?>
 <div class="box_list">
-	<div class="tieude">
-		<h3>Loại phụ kiện</h3>
+	<div class="bg-dark">
+		<h3 class="px-3 py-3 text-light fs-4">DANH MỤC SẢN PHẨM</h3>
 	</div>
-	<ul class="list">
+	<ul class="list-group">
 		<?php
 			while ($row = $result->fetch_assoc()) {
 		?>
-			<li><a href="index.php?quanly=loaisp&id=<?php echo $row['idloaisp'] ?>"><?php echo $row['tenloaisp'] ?></a></li>
+			<li class="list-group-item"><a href="index.php?quanly=loaisp&id=<?php echo $row['idloaisp'] ?>"><?php echo $row['tenloaisp'] ?></a></li>
 		<?php
 			}
 		?>
@@ -23,14 +23,14 @@
 	$result_brands = mysqli_query($conn, $sql_brands);
 ?>
 <div class="box_list">
-	<div class="tieude">
-		<h3>Thương hiệu</h3>
+	<div class="bg-dark">
+		<h3 class="px-3 py-3 text-light fs-4">THƯƠNG HIỆU</h3>
 	</div>
-	<ul class="list">
+	<ul class="list-group">
 		<?php
 			while ($row_brands = $result_brands->fetch_assoc()) {
 		?>
-			<li><a href="index.php?quanly=hieusp&id=<?php echo $row_brands['idhieusp'] ?>"><?php echo $row_brands['tenhieusp'] ?></a></li>
+			<li class="list-group-item"><a href="index.php?quanly=hieusp&id=<?php echo $row_brands['idhieusp'] ?>"><?php echo $row_brands['tenhieusp'] ?></a></li>
 		<?php
 			}
 		?>
@@ -38,8 +38,8 @@
 </div><!--Ket thuc div box thuong hieu -->
 <div class="box_list">
 
-	<div class="tieude">
-		<h3>Hàng bán chạy</h3>
+	<div class="bg-dark">
+		<h3 class="px-3 py-3 text-light fs-4">HÀNG BÁN CHẠY</h3>
 	</div>
 	<?php
 		// Lấy ra sản phẩm bán chạy nhất 
@@ -65,8 +65,8 @@
 	<?php
 		$sql_new = mysqli_query($conn, "select * from tintuc");
 	?>
-	<div class="tieude">
-		<h3>Tin tức sản phẩm</h3>
+	<div class="bg-dark">
+		<h3 class="px-3 py-3 text-light fs-4">TIN TỨC SẢN PHẨM</h3>
 	</div>
 	<ul class="tintucsp">
 		<?php
